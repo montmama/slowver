@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>山野有风，自在生长 · montmama 慢山野系列 2027 夏季</title>
+<style>
+  @font-face{font-family:'Chill Jinshu Song';src:url('https://lf-flow-web-cdn.doubao.com/obj/flow-doubao/doubao/infinite-canvas/fonts/v1/chill-jinshu-song-pro/chill-jinshu-song-pro-regular.otf') format('opentype');font-weight:400;font-style:normal;font-display:swap;}
+  @font-face{font-family:'Chill Jinshu Song';src:url('https://lf-flow-web-cdn.doubao.com/obj/flow-doubao/doubao/infinite-canvas/fonts/v1/chill-jinshu-song-pro/chill-jinshu-song-pro-soft.otf') format('opentype');font-weight:700;font-style:normal;font-display:swap;}
+  @font-face{font-family:'Chill Jinshu Song';src:url('https://lf-flow-web-cdn.doubao.com/obj/flow-doubao/doubao/infinite-canvas/fonts/v1/chill-jinshu-song-pro/chill-jinshu-song-pro-italic.otf') format('opentype');font-weight:600;font-style:italic;font-display:swap;}
+  @font-face{font-family:'Source Han Sans SC VF';src:url('https://lf-flow-web-cdn.doubao.com/obj/flow-doubao/doubao/infinite-canvas/fonts/v1/source-han-sans-sc-vf/source-han-sans-sc-vf.otf') format('opentype');font-weight:250 900;font-style:normal;font-display:swap;}
+  @font-face{font-family:'Montserrat';src:url('https://lf-flow-web-cdn.doubao.com/obj/flow-doubao/doubao/infinite-canvas/fonts/v1/montserrat/montserrat-light.ttf') format('truetype');font-weight:300;font-style:normal;font-display:swap;}
+  @font-face{font-family:'Montserrat';src:url('https://lf-flow-web-cdn.doubao.com/obj/flow-doubao/doubao/infinite-canvas/fonts/v1/montserrat/montserrat-regular.ttf') format('truetype');font-weight:400;font-style:normal;font-display:swap;}
+  @font-face{font-family:'Montserrat';src:url('https://lf-flow-web-cdn.doubao.com/obj/flow-doubao/doubao/infinite-canvas/fonts/v1/montserrat/montserrat-medium.ttf') format('truetype');font-weight:500;font-style:normal;font-display:swap;}
+  @font-face{font-family:'Montserrat';src:url('https://lf-flow-web-cdn.doubao.com/obj/flow-doubao/doubao/infinite-canvas/fonts/v1/montserrat/montserrat-medium-italic.ttf') format('truetype');font-weight:500;font-style:italic;font-display:swap;}
+
+  *{margin:0;padding:0;box-sizing:border-box;}
+  :root{
+    --ink:#1B2119; --ink2:#232B1F; --paper:#F3EFE4; --moss:#71845F;
+    --sage:#A9B79A; --sand:#CDB98F; --pink:#E8678A; --line:#DCD3BE;
+    --serif:'Chill Jinshu Song','PingFang SC','Microsoft YaHei',serif;
+    --sans:'Source Han Sans SC VF','PingFang SC','Microsoft YaHei',sans-serif;
+    --mon:'Montserrat','Arial',sans-serif;
+  }
+  html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;}
+  body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-weight:300;line-height:1.8;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+  ::selection{background:var(--pink);color:#fff;}
+  img{display:block;}
+  .wrap{width:100%;max-width:1440px;margin:0 auto;padding:0 clamp(20px,5vw,96px);}
+
+  /* ---------- 印花图形（用户提供的时间刻度） ---------- */
+  .dial-img{display:block;width:100%;height:auto;}
+  .dial-img.ghost{opacity:.9;}
+  .mini-dial{display:block;width:clamp(26px,3.2vw,42px);height:auto;}
+  .seal-img{width:94%;height:94%;object-fit:contain;}
+
+  /* ---------- Hero ---------- */
+  .hero{position:relative;min-height:min(100svh,900px);background:#1B2119;display:flex;flex-direction:column;justify-content:center;padding:clamp(88px,11vh,132px) 0 clamp(44px,6vh,84px);overflow:hidden;}
+  .hero-bg{position:absolute;inset:0;background:url("https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/H32GbXEV7oD6LIxGgrBc6jbBnkg") center 42%/cover no-repeat;}
+  .hero-mask{position:absolute;inset:0;background:linear-gradient(102deg,rgba(14,20,13,.92) 0%,rgba(14,20,13,.72) 34%,rgba(14,20,13,.24) 66%,rgba(14,20,13,.06) 100%);}
+  .hero-mask2{position:absolute;inset:0;background:linear-gradient(to top,rgba(14,20,13,.72) 0%,rgba(14,20,13,0) 42%);}
+  .hero-dial{position:absolute;right:2.5vw;top:24%;width:clamp(116px,16vw,232px);opacity:.9;z-index:2;pointer-events:none;}
+
+  .nav{position:relative;z-index:3;}
+  .nav-in{display:flex;align-items:center;justify-content:space-between;gap:20px;padding-bottom:clamp(32px,7vh,84px);}
+  .nav-brand{font-family:var(--serif);font-weight:700;letter-spacing:.14em;font-size:clamp(15px,1.3vw,19px);color:#fff;white-space:nowrap;}
+  .nav-brand span{display:inline-block;font-weight:400;font-size:12px;letter-spacing:.26em;margin-left:12px;color:rgba(255,255,255,.7);}
+  .nav-right{display:flex;align-items:center;gap:clamp(16px,2.4vw,36px);}
+  .nav-links{display:flex;gap:clamp(16px,2.4vw,32px);font-size:11px;letter-spacing:.24em;color:rgba(255,255,255,.85);}
+  .nav-links a{color:inherit;text-decoration:none;transition:color .3s;}
+  .nav-links a:hover{color:var(--sand);}
+  .nav-chip{border:1px solid rgba(255,255,255,.4);border-radius:999px;padding:7px 16px;font-family:var(--mon);font-size:10px;letter-spacing:.24em;color:#fff;white-space:nowrap;}
+
+  .hero-inner{position:relative;z-index:3;max-width:900px;}
+  .hero-slash{width:clamp(70px,9vw,120px);height:4px;background:var(--pink);transform:skewX(-24deg);margin-bottom:clamp(18px,3vw,28px);}
+  .hero-eyebrow{display:flex;align-items:center;gap:14px;font-family:var(--mon);font-size:11px;letter-spacing:.38em;color:var(--sand);margin-bottom:clamp(14px,2vw,26px);flex-wrap:wrap;}
+  .hero-eyebrow b{font-weight:500;color:#fff;}
+  .hero-title{font-family:var(--serif);font-weight:700;font-size:clamp(34px,6vw,78px);line-height:1.14;color:#fff;white-space:nowrap;}
+  .hero-title em{font-style:italic;font-weight:600;color:var(--pink);}
+  .hero-cn{font-family:var(--serif);font-weight:700;font-size:clamp(21px,2.5vw,36px);letter-spacing:.22em;color:#fff;margin-top:clamp(16px,2.4vw,30px);}
+  .hero-sub{font-family:var(--serif);font-weight:400;font-size:clamp(13px,1.25vw,17px);letter-spacing:.34em;color:rgba(255,255,255,.78);margin-top:12px;}
+  .hero-foot{position:relative;z-index:3;display:flex;align-items:flex-end;justify-content:space-between;gap:24px;flex-wrap:wrap;margin-top:clamp(32px,6vh,68px);}
+  .hero-tags{display:flex;gap:10px;flex-wrap:wrap;}
+  .tag{border:1px solid rgba(255,255,255,.38);border-radius:999px;padding:9px 18px;font-size:11px;letter-spacing:.2em;color:#fff;display:flex;align-items:center;gap:9px;white-space:nowrap;}
+  .tag i{width:6px;height:6px;border-radius:50%;background:var(--pink);}
+  .hero-tagline{font-family:var(--serif);font-style:italic;font-weight:600;font-size:clamp(15px,1.5vw,22px);color:rgba(255,255,255,.85);letter-spacing:.04em;text-align:right;line-height:1.7;}
+  .hero-tagline b{font-style:normal;font-weight:700;color:#fff;}
+  .hero-meta{position:absolute;right:3.5vw;top:clamp(64px,9vh,110px);text-align:right;font-family:var(--mon);font-size:10px;letter-spacing:.26em;color:rgba(255,255,255,.55);line-height:2.1;z-index:3;}
+
+  /* ---------- 跑马带 ---------- */
+  .marquee{background:var(--ink2);padding:13px 0;}
+  .marquee-in{display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap;}
+  .marquee-track{display:flex;align-items:center;gap:14px;flex-wrap:wrap;}
+  .mq-en{font-family:var(--serif);font-style:italic;font-weight:600;font-size:clamp(13px,1.2vw,16px);letter-spacing:.08em;color:var(--sand);}
+  .mq-dot{width:5px;height:5px;border-radius:50%;background:var(--pink);flex:none;}
+  .mq-cn{font-family:var(--serif);font-weight:700;font-size:clamp(12px,1.05vw,15px);letter-spacing:.26em;color:rgba(255,255,255,.9);}
+  .mq-right{font-family:var(--mon);font-size:10px;letter-spacing:.22em;color:rgba(255,255,255,.5);text-transform:uppercase;}
+
+  /* ---------- 理念 ---------- */
+  .manifesto{background:var(--ink2);color:var(--paper);padding:clamp(60px,7.5vw,104px) 0 clamp(60px,7.5vw,98px);}
+  .sec-head{display:flex;align-items:baseline;gap:clamp(10px,1.6vw,20px);flex-wrap:wrap;}
+  .sec-num{font-family:var(--mon);font-size:13px;color:var(--pink);letter-spacing:.22em;}
+  .sec-title{font-family:var(--serif);font-weight:700;font-size:clamp(23px,2.5vw,33px);letter-spacing:.2em;}
+  .sec-en{font-family:var(--serif);font-style:italic;font-weight:600;font-size:clamp(14px,1.2vw,16px);letter-spacing:.08em;}
+  .sec-rule{flex:1;min-width:36px;height:1px;background:rgba(255,255,255,.14);}
+  .man-grid{display:grid;grid-template-columns:minmax(0,0.9fr) minmax(0,2.2fr);gap:clamp(26px,5vw,90px);margin-top:clamp(32px,4.6vw,60px);align-items:start;}
+  .man-label{font-family:var(--mon);font-size:10px;letter-spacing:.26em;color:var(--sand);text-transform:uppercase;line-height:2.5;}
+  .man-label .big{display:block;font-family:var(--serif);font-style:italic;font-weight:600;font-size:clamp(23px,2.8vw,31px);color:var(--pink);letter-spacing:.03em;margin-top:16px;text-transform:none;line-height:1.5;}
+  .man-note{margin-top:clamp(24px,4vw,56px);padding-left:14px;border-left:1px solid rgba(205,185,143,.45);font-family:var(--serif);font-size:13px;letter-spacing:.16em;line-height:2.3;color:rgba(243,239,228,.45);}
+  .man-poem p{font-family:var(--serif);font-weight:400;font-size:clamp(15px,1.4vw,19px);line-height:2.1;letter-spacing:.04em;margin-bottom:clamp(18px,2.6vw,32px);color:rgba(243,239,228,.94);}
+  .man-poem .lead{color:rgba(243,239,228,.62);}
+  .man-poem .hl{color:var(--sand);}
+  .man-en{padding-top:24px;border-top:1px solid rgba(255,255,255,.14);font-family:var(--serif);font-style:italic;font-weight:600;font-size:clamp(14px,1.3vw,19px);color:rgba(243,239,228,.6);letter-spacing:.03em;}
+  .keywords{display:grid;grid-template-columns:repeat(4,1fr);margin-top:clamp(36px,4.6vw,80px);border-top:1px solid rgba(255,255,255,.14);}
+  .kw{padding:clamp(22px,2.6vw,38px) 10px 0;text-align:center;border-left:1px solid rgba(255,255,255,.14);}
+  .kw:first-child{border-left:none;}
+  .kw svg{width:26px;height:26px;stroke:var(--sand);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;margin:0 auto 12px;}
+  .kw-cn{font-family:var(--serif);font-weight:700;font-size:clamp(15px,1.3vw,18px);letter-spacing:.3em;margin-bottom:4px;}
+  .kw-en{font-family:var(--mon);font-size:10px;color:rgba(243,239,228,.5);letter-spacing:.16em;text-transform:uppercase;}
+
+  /* ---------- 印花 ---------- */
+  .printsec{background:var(--paper);padding:clamp(52px,6.5vw,96px) 0;border-bottom:1px solid var(--line);}
+  .print-grid{display:grid;grid-template-columns:minmax(0,0.85fr) minmax(0,1.15fr);gap:clamp(28px,5vw,90px);align-items:center;}
+  .print-visual{width:min(100%,420px);}
+  .print-cap{margin-top:10px;text-align:right;font-family:var(--mon);font-size:10px;letter-spacing:.24em;color:#8A8F7C;text-transform:uppercase;line-height:2;}
+  .print-rep{display:flex;gap:10px;margin-top:clamp(18px,2.6vw,30px);opacity:.75;flex-wrap:wrap;}
+  .print-rep svg{width:clamp(28px,3.2vw,44px);height:auto;}
+  .print-kicker{font-family:var(--mon);font-size:10px;letter-spacing:.28em;color:var(--pink);text-transform:uppercase;margin-bottom:clamp(10px,1.8vw,20px);}
+  .print-h{font-family:var(--serif);font-weight:700;font-size:clamp(26px,3.4vw,46px);letter-spacing:.14em;line-height:1.45;}
+  .print-h em{display:block;font-style:italic;font-weight:600;color:var(--moss);font-size:clamp(14px,1.65vw,24px);letter-spacing:.04em;margin-top:8px;}
+  .print-p{margin-top:clamp(14px,2.2vw,26px);font-family:var(--serif);font-weight:400;font-size:clamp(14px,1.3vw,17px);line-height:2;letter-spacing:.04em;color:#5C6356;}
+  .print-spec{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:clamp(18px,2.6vw,34px);padding-top:clamp(14px,2.2vw,26px);border-top:1px solid var(--line);}
+  .spec-t{font-family:var(--serif);font-weight:700;font-size:clamp(13px,1.15vw,15px);letter-spacing:.18em;margin-bottom:2px;}
+  .spec-d{font-family:var(--mon);font-size:9.5px;letter-spacing:.16em;color:#8A8F7C;text-transform:uppercase;}
+
+  /* ---------- 产品 ---------- */
+  .collection{background:var(--paper);padding:clamp(52px,6.5vw,104px) 0 clamp(60px,7.5vw,116px);}
+  .coll-top{display:flex;justify-content:space-between;align-items:flex-end;gap:18px;flex-wrap:wrap;margin-bottom:clamp(24px,3.2vw,56px);}
+  .coll-note{font-family:var(--mon);font-size:10px;letter-spacing:.22em;color:#8A8F7C;text-transform:uppercase;line-height:2.1;text-align:right;}
+  .product-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(14px,1.8vw,26px);}
+  .card{background:#fff;border:1px solid var(--line);display:flex;flex-direction:column;transition:transform .4s ease,box-shadow .4s ease;}
+  .card:hover{transform:translateY(-6px);box-shadow:0 24px 44px -26px rgba(27,33,25,.4);}
+  .card-img{position:relative;overflow:hidden;background:#E8E2D3;aspect-ratio:279/360;}
+  .card-img img{width:100%;height:100%;object-fit:cover;transition:transform .7s ease;}
+  .card:hover .card-img img{transform:scale(1.05);}
+  .card-cat{position:absolute;top:12px;left:12px;background:rgba(27,33,25,.84);color:#fff;border-radius:999px;padding:5px 12px;font-family:var(--mon);font-size:9px;letter-spacing:.18em;text-transform:uppercase;line-height:1.7;}
+  .seal{position:absolute;top:12px;right:12px;width:clamp(38px,3.6vw,56px);height:clamp(38px,3.6vw,56px);border-radius:7px;background:rgba(27,33,25,.6);display:flex;align-items:center;justify-content:center;}
+  .seal svg{width:66%;height:66%;}
+  .card-scene{position:absolute;bottom:12px;right:12px;background:rgba(255,255,255,.93);color:var(--ink);border-radius:999px;padding:4px 11px;font-size:10px;letter-spacing:.14em;line-height:1.7;}
+  .card-no{position:absolute;bottom:12px;left:12px;font-family:var(--serif);font-style:italic;font-weight:600;font-size:clamp(18px,1.6vw,22px);color:#fff;text-shadow:0 2px 12px rgba(0,0,0,.5);line-height:1;}
+  .card-body{padding:clamp(15px,1.5vw,22px) clamp(13px,1.4vw,20px) clamp(16px,1.7vw,24px);display:flex;flex-direction:column;flex:1;}
+  .card-name{font-family:var(--serif);font-weight:700;font-size:clamp(16px,1.35vw,19px);letter-spacing:.12em;margin-bottom:8px;}
+  .card-desc{font-size:clamp(11.5px,0.95vw,12.5px);font-weight:300;color:var(--moss);line-height:1.9;margin-bottom:14px;flex:1;}
+  .card-feats{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px;}
+  .feat{font-size:10px;letter-spacing:.06em;color:#5C6356;border:1px solid var(--line);padding:3px 8px;border-radius:999px;line-height:1.6;}
+  .swatches{display:flex;gap:8px;align-items:center;}
+  .sw{width:15px;height:15px;border-radius:50%;border:1px solid rgba(27,33,25,.2);}
+  .sw.sage{background:var(--sage);} .sw.sand{background:var(--sand);} .sw.clay{background:#B98E6F;} .sw.char{background:#3A3F38;} .sw.pink{background:var(--pink);}
+  .card-link{margin-top:14px;display:flex;justify-content:space-between;align-items:center;font-family:var(--mon);font-size:10px;letter-spacing:.18em;color:var(--ink);text-transform:uppercase;}
+
+  /* ---------- 横幅 ---------- */
+  .banner{position:relative;overflow:hidden;min-height:clamp(240px,30vw,440px);display:flex;align-items:center;}
+  .banner-bg{position:absolute;inset:0;background:url("https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/Tnv5bpAajoZqrUxTGZ2c186PnRb") center 54%/cover no-repeat;}
+  .banner-mask{position:absolute;inset:0;background:linear-gradient(94deg,rgba(12,18,11,.94) 0%,rgba(12,18,11,.74) 44%,rgba(12,18,11,.32) 74%,rgba(12,18,11,.06) 100%);}
+  .banner-in{position:relative;z-index:2;padding:clamp(36px,5.5vw,92px) clamp(20px,5vw,96px);max-width:900px;margin:0;}
+  .banner h3{font-family:var(--serif);font-weight:700;color:#fff;font-size:clamp(19px,2.5vw,32px);letter-spacing:.16em;line-height:1.9;}
+  .banner h3 span{display:block;}
+  .banner p{margin-top:12px;font-family:var(--serif);font-style:italic;font-weight:600;color:rgba(255,255,255,.78);font-size:clamp(13px,1.35vw,19px);letter-spacing:.04em;}
+
+  /* ---------- 收尾 ---------- */
+  .closing{background:var(--ink);color:var(--paper);text-align:center;padding:clamp(66px,8.5vw,124px) 0 clamp(60px,7.5vw,118px);}
+  .closing-mark{font-family:var(--mon);font-size:10px;letter-spacing:.34em;color:var(--pink);text-transform:uppercase;margin-bottom:clamp(16px,2.6vw,34px);}
+  .closing h2{font-family:var(--serif);font-weight:700;font-size:clamp(21px,2.9vw,40px);line-height:1.95;letter-spacing:.1em;}
+  .closing h2 span{display:block;}
+  .closing .en{margin-top:clamp(18px,2.6vw,38px);font-family:var(--serif);font-style:italic;font-weight:600;font-size:clamp(14px,1.7vw,24px);color:rgba(243,239,228,.7);letter-spacing:.04em;}
+  .closing .en b{font-style:normal;font-weight:700;color:#fff;}
+
+  .foot{border-top:1px solid rgba(255,255,255,.1);background:var(--ink);padding:clamp(18px,2.2vw,30px) 0;}
+  .foot-in{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;font-family:var(--mon);font-size:10px;color:rgba(243,239,228,.5);letter-spacing:.16em;text-transform:uppercase;}
+  .foot .brand{font-family:var(--serif);font-weight:700;letter-spacing:.1em;color:#fff;font-size:clamp(12px,1.05vw,14px);text-transform:none;}
+
+  /* ---------- 响应式 ---------- */
+  @media (max-width:1100px){
+    .product-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;}
+    .hero-dial{opacity:.5;top:13%;}
+  }
+  @media (max-width:900px){
+    .man-grid{grid-template-columns:1fr;gap:24px;}
+    .man-note{margin-top:22px;}
+    .print-grid{grid-template-columns:1fr;gap:24px;}
+    .print-visual{max-width:300px;margin:0 auto;}
+    .print-cap{text-align:center;}
+    .print-rep{justify-content:center;}
+    .banner-in{max-width:100%;}
+    .hero-tagline{display:none;}
+    .hero-dial{display:none;}
+    .hero-meta{display:none;}
+  }
+  @media (max-width:720px){
+    .nav-links{display:none;}
+    .nav-brand span{display:none;}
+    .keywords{grid-template-columns:repeat(2,1fr);}
+    .kw:nth-child(3){border-left:none;}
+    .product-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;}
+    .mq-right{display:none;}
+    .card-desc{font-size:11.5px;}
+  }
+  @media (max-width:520px){
+    .product-grid{grid-template-columns:1fr;}
+    .nav-chip{display:none;}
+    .coll-note{text-align:left;}
+    .print-spec{grid-template-columns:repeat(3,1fr);gap:10px;}
+    .closing h2{letter-spacing:.06em;}
+  }
+  @media (prefers-reduced-motion:reduce){*{transition:none!important;}}
+</style>
+</head>
+<body>
+
+<!-- ===== Hero ===== -->
+<header class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-mask"></div>
+  <div class="hero-mask2"></div>
+
+  <div class="hero-dial">
+    <img class="dial-img ghost" src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/JoigbEKNAoKma9xFnmmc4UWNnZe" alt="时间指针" aria-hidden="true">
+  </div>
+
+  <div class="hero-meta">Mojave Wildland<br>Golden hour · 18:40</div>
+
+  <nav class="nav">
+    <div class="wrap nav-in">
+      <div class="nav-brand">montmama<span>慢山野系列</span></div>
+      <div class="nav-right">
+        <div class="nav-links"><a href="#manifesto">理念</a><a href="#print">印花</a><a href="#collection">系列</a></div>
+        <div class="nav-chip">Summer 2027 · Slow Wild</div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="wrap hero-inner">
+    <div class="hero-slash"></div>
+    <div class="hero-eyebrow">Wild<b>/</b>Trail<b>/</b>Hike</div>
+    <div class="hero-title">Flowers need time<br>to <em>bloom</em>.</div>
+    <div class="hero-cn">山野有风，自在生长</div>
+    <div class="hero-sub">轻赴山野，慢等花开</div>
+  </div>
+
+  <div class="wrap hero-foot">
+    <div class="hero-tags">
+      <span class="tag"><i></i>徒步 Hiking</span>
+      <span class="tag"><i></i>露营 Camping</span>
+      <span class="tag"><i></i>山径 Trail</span>
+    </div>
+    <div class="hero-tagline">Take it slow in the wild.<br><b>Let yourself bloom.</b></div>
+  </div>
+</header>
+
+<!-- ===== 跑马带 ===== -->
+<div class="marquee">
+  <div class="wrap marquee-in">
+    <div class="marquee-track">
+      <span class="mq-en">Flowers need time to bloom</span>
+      <span class="mq-dot"></span>
+      <span class="mq-cn">山野有风 · 自在生长</span>
+      <span class="mq-dot"></span>
+      <span class="mq-en">Let yourself bloom</span>
+    </div>
+    <div class="mq-right">Summer 2027 · Slow Wild Series</div>
+  </div>
+</div>
+
+<!-- ===== 理念 ===== -->
+<section class="manifesto" id="manifesto">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-num">01</span>
+      <span class="sec-title" style="color:var(--paper)">理念</span>
+      <span class="sec-en" style="color:var(--sand)">Manifesto</span>
+      <span class="sec-rule"></span>
+    </div>
+    <div class="man-grid">
+      <div class="man-label">
+        The rhythm<br>of the wild
+        <span class="big">On your<br>own time.</span>
+        <div class="man-note">山野没有时刻表<br>只按自己的节拍<br>慢慢生长</div>
+      </div>
+      <div class="man-poem">
+        <p class="lead">花的绽放，从不是仓促的奔赴。轻装踏入山野，把节奏交给风与日光，不急追赶，自在舒展，在自然里，慢慢成为自己。</p>
+        <p>山野从没有急促的时刻表，如同花苞，自有它慢慢绽放的时序。卸下厚重行囊，以轻装奔赴户外，穿行林间、迎着山风，不追赶目的地，只感受沿路的生机。</p>
+        <p class="hl">一花一叶都在从容生长，我们也在此刻，自在舒展，静待盛放。</p>
+        <div class="man-en">"The mountain keeps no urgent timetable — a bud blooms on its own time."</div>
+      </div>
+    </div>
+    <div class="keywords">
+      <div class="kw">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21C7 16.5 4 12.5 4 8.5 4 6 6 4 8.5 4 11 4 13 6 12 21Z"/><path d="M12 21c2-5 5-9 7-11"/></svg>
+        <div class="kw-cn">轻装</div><div class="kw-en">Light Pack</div>
+      </div>
+      <div class="kw">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 8h11a3 3 0 1 0-3-3"/><path d="M3 12h15a3 3 0 1 1-3 3"/><path d="M3 16h8"/></svg>
+        <div class="kw-cn">自在</div><div class="kw-en">At Ease</div>
+      </div>
+      <div class="kw">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 21h10l2-6-4-2-1-7H10l-1 7-4 2 2 6Z"/><path d="M9 12h6"/></svg>
+        <div class="kw-cn">从容</div><div class="kw-en">Unrushed</div>
+      </div>
+      <div class="kw">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M19.1 4.9 17 7M7 17l-2.1 2.1"/></svg>
+        <div class="kw-cn">舒展</div><div class="kw-en">Unfold</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 印花 ===== -->
+<section class="printsec" id="print">
+  <div class="wrap print-grid">
+    <div>
+      <div class="print-visual">
+        <img class="dial-img" src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/A9oYbgzjkoyWuSxrvwFcd2Fsngf" alt="时间指针印花">
+      </div>
+      <div class="print-cap">Signature print · No.01<br>Time Pointer</div>
+      <div class="print-rep">
+        <img class="mini-dial" src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/A9oYbgzjkoyWuSxrvwFcd2Fsngf" alt="" aria-hidden="true">
+        <img class="mini-dial" src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/A9oYbgzjkoyWuSxrvwFcd2Fsngf" alt="" aria-hidden="true">
+        <img class="mini-dial" src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/A9oYbgzjkoyWuSxrvwFcd2Fsngf" alt="" aria-hidden="true">
+        <img class="mini-dial" src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/A9oYbgzjkoyWuSxrvwFcd2Fsngf" alt="" aria-hidden="true">
+        <img class="mini-dial" src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/A9oYbgzjkoyWuSxrvwFcd2Fsngf" alt="" aria-hidden="true">
+      </div>
+    </div>
+    <div>
+      <div class="print-kicker">The Print</div>
+      <div class="print-h">时间指针<em>Time Pointer — printed, not rushed.</em></div>
+      <p class="print-p">山野没有时刻表。指针不做催促，只标出你走过的那一段：一圈刻度，一个自己的角度。把它印在衣角，提醒每一次出发都不必赶上什么。</p>
+      <div class="print-spec">
+        <div><div class="spec-t">刻度</div><div class="spec-d">Scale · 25 marks</div></div>
+        <div><div class="spec-t">指针</div><div class="spec-d">One-way hand</div></div>
+        <div><div class="spec-t">留白</div><div class="spec-d">Room to bloom</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 产品 ===== -->
+<section class="collection" id="collection">
+  <div class="wrap">
+    <div class="coll-top">
+      <div class="sec-head" style="flex:1">
+        <span class="sec-num">03</span>
+        <span class="sec-title">夏季系列</span>
+        <span class="sec-en" style="color:var(--moss)">The Collection</span>
+      </div>
+      <div class="coll-note">Summer 2027<br>Four pieces · one rhythm</div>
+    </div>
+    <div class="product-grid">
+
+      <article class="card">
+        <div class="card-img">
+          <img src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/LwtMbcKpQoNxonxyeKCcwDtmnQB" alt="户外短袖T恤">
+          <span class="card-cat">Short-Sleeve Tee</span>
+          <span class="seal"><img class="seal-img" src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/JoigbEKNAoKma9xFnmmc4UWNnZe" alt="" aria-hidden="true"></span>
+          <span class="card-no">01</span>
+          <span class="card-scene">荒漠徒步</span>
+        </div>
+        <div class="card-body">
+          <div class="card-name">户外短袖T恤</div>
+          <p class="card-desc">轻量速干的夏季基础款，透气排汗，山野徒步与日常通勤都自在舒展。</p>
+          <div class="card-feats"><span class="feat">轻量透气</span><span class="feat">速干排汗</span><span class="feat">抗皱耐穿</span></div>
+          <div class="swatches"><span class="sw sage"></span><span class="sw sand"></span><span class="sw char"></span><span class="sw pink"></span></div>
+          <div class="card-link"><span>View detail</span><span>→</span></div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-img">
+          <img src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/XjH0bN7ZNoLjVTxuWDEc5Nz5nEf" alt="户外长袖T恤">
+          <span class="card-cat">Long-Sleeve Tee</span>
+          <span class="seal"><img class="seal-img" src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/JoigbEKNAoKma9xFnmmc4UWNnZe" alt="" aria-hidden="true"></span>
+          <span class="card-no">02</span>
+          <span class="card-scene">林间山径</span>
+        </div>
+        <div class="card-body">
+          <div class="card-name">户外长袖T恤</div>
+          <p class="card-desc">圆领插肩长袖速干T恤，薄软透气，防晒又不闷，林间穿行自在不受牵绊。</p>
+          <div class="card-feats"><span class="feat">长袖速干</span><span class="feat">弹力舒适</span><span class="feat">薄软防晒</span></div>
+          <div class="swatches"><span class="sw sand"></span><span class="sw sage"></span><span class="sw char"></span><span class="sw clay"></span></div>
+          <div class="card-link"><span>View detail</span><span>→</span></div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-img">
+          <img src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/ESo1bbpNfomSLcx6crhc5FPvnuc" alt="户外短裤">
+          <span class="card-cat">Hiking Shorts</span>
+          <span class="seal"><img class="seal-img" src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/JoigbEKNAoKma9xFnmmc4UWNnZe" alt="" aria-hidden="true"></span>
+          <span class="card-no">03</span>
+          <span class="card-scene">山脊草甸</span>
+        </div>
+        <div class="card-body">
+          <div class="card-name">户外短裤</div>
+          <p class="card-desc">宽松利落的剪裁，耐磨面料应对不平山路，迈步之间保持清爽与自在。</p>
+          <div class="card-feats"><span class="feat">轻量耐磨</span><span class="feat">宽松自在</span><span class="feat">徒步通勤</span></div>
+          <div class="swatches"><span class="sw char"></span><span class="sw sand"></span><span class="sw sage"></span><span class="sw clay"></span></div>
+          <div class="card-link"><span>View detail</span><span>→</span></div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-img">
+          <img src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/BMWFbOEjhoN4vvxarFvcpMdqnpb" alt="皮肤衣">
+          <span class="card-cat">Skin Jacket</span>
+          <span class="seal"><img class="seal-img" src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/JoigbEKNAoKma9xFnmmc4UWNnZe" alt="" aria-hidden="true"></span>
+          <span class="card-no">04</span>
+          <span class="card-scene">旷野防风</span>
+        </div>
+        <div class="card-body">
+          <div class="card-name">皮肤衣</div>
+          <p class="card-desc">薄如蝉翼的防风外壳，可折叠收纳随身带走，为山野清晨与山风留一层从容。</p>
+          <div class="card-feats"><span class="feat">轻肤防风</span><span class="feat">便携收纳</span><span class="feat">山野风衣</span></div>
+          <div class="swatches"><span class="sw sage"></span><span class="sw char"></span><span class="sw sand"></span><span class="sw pink"></span></div>
+          <div class="card-link"><span>View detail</span><span>→</span></div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== 横幅 ===== -->
+<section class="banner">
+  <div class="banner-bg"></div>
+  <div class="banner-mask"></div>
+  <div class="banner-in">
+    <h3><span>轻装入山野，静待花盛开。</span><span>在户外，慢下来，与自然同频生长。</span></h3>
+    <p>Take only memories, leave only footprints.</p>
+  </div>
+</section>
+
+<!-- ===== 收尾 ===== -->
+<section class="closing">
+  <div class="wrap">
+    <div class="closing-mark">Bloom in your own time</div>
+    <h2><span>不急追赶，自在舒展。</span><span>一花一叶，静待盛放。</span></h2>
+    <div class="en">Take it slow in the wild. <b>Let yourself bloom.</b></div>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="wrap foot-in">
+    <div class="brand">montmama · 慢山野系列 · 原创设计</div>
+    <div>Summer 2027 — Flowers Need Time to Bloom</div>
+  </div>
+</footer>
+
+</body>
+</html>
